@@ -1,20 +1,16 @@
+
 /* ==========================================================
    GEOBINARIO
    PANTALLA DE INGRESO DE NÚMEROS
 ========================================================== */
 
 .input-page {
-
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 35px;
-
+    box-sizing: border-box;
 }
 
 
@@ -23,31 +19,21 @@
 ========================================================== */
 
 .input-card {
-
     width: min(1250px, 95vw);
-
     min-height: 680px;
-
     display: grid;
-
     grid-template-columns: 48% 52%;
-
     overflow: hidden;
-
     position: relative;
-
     border-radius: 35px;
-
     background:
         rgba(255, 255, 255, 0.88);
-
     box-shadow:
         0 30px 80px
         rgba(5, 12, 26, 0.18);
-
     backdrop-filter:
         blur(15px);
-
+    box-sizing: border-box;
 }
 
 
@@ -56,52 +42,34 @@
 ========================================================== */
 
 .input-mascot-side {
-
     position: relative;
-
     display: flex;
-
     align-items: flex-end;
-
     justify-content: center;
-
     overflow: hidden;
-
     background:
         linear-gradient(
             145deg,
             rgba(77, 166, 255, 0.12),
             rgba(0, 204, 153, 0.08)
         );
-
 }
 
-
 .input-mascot-side::before {
-
     content: "";
-
     position: absolute;
-
     width: 480px;
-
     height: 480px;
-
     top: -160px;
-
     left: -180px;
-
     border-radius: 50%;
-
     background:
         linear-gradient(
             135deg,
             var(--aero-sky-blue),
             var(--aero-aqua)
         );
-
     opacity: 0.12;
-
 }
 
 
@@ -110,52 +78,35 @@
 ========================================================== */
 
 .input-mascot {
-
     position: relative;
-
     z-index: 2;
-
     width: 92%;
-
     max-width: 520px;
-
     height: auto;
-
     display: block;
-
     object-fit: contain;
-
     object-position: bottom;
-
     filter:
         drop-shadow(
             0 22px 22px
             rgba(5, 12, 26, 0.20)
         );
-
     animation:
         inputMascotFloat 4s ease-in-out infinite;
-
 }
-
 
 @keyframes inputMascotFloat {
 
     0%,
     100% {
-
         transform:
             translateY(0);
-
     }
 
     50% {
-
         transform:
             translateY(-8px);
-
     }
-
 }
 
 
@@ -164,31 +115,20 @@
 ========================================================== */
 
 .input-content {
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     padding: 55px;
-
+    box-sizing: border-box;
 }
 
-
 .input-eyebrow {
-
     color:
         var(--aero-sky-blue);
-
     font-size: 12px;
-
     font-weight: 900;
-
     letter-spacing: 3px;
-
     margin-bottom: 10px;
-
 }
 
 
@@ -197,25 +137,16 @@
 ========================================================== */
 
 .input-title {
-
     margin: 0;
-
     color:
         var(--aero-space-blue);
-
     font-size: 42px;
-
     line-height: 1.05;
-
     font-weight: 900;
-
 }
 
-
 .input-title span {
-
     display: block;
-
     background:
         linear-gradient(
             90deg,
@@ -223,13 +154,9 @@
             var(--aero-aqua),
             var(--aero-grass-green)
         );
-
     -webkit-background-clip: text;
-
     background-clip: text;
-
     color: transparent;
-
 }
 
 
@@ -238,26 +165,17 @@
 ========================================================== */
 
 .input-description {
-
     max-width: 500px;
-
     margin-top: 17px;
-
     color:
         rgba(11, 29, 58, 0.68);
-
     font-size: 16px;
-
     line-height: 1.6;
-
 }
 
-
 .input-description strong {
-
     color:
         var(--aero-space-blue);
-
 }
 
 
@@ -266,24 +184,18 @@
 ========================================================== */
 
 .number-input-box {
-
     margin-top: 28px;
-
     padding: 24px;
-
     border-radius: 25px;
-
     background:
         rgba(255, 255, 255, 0.72);
-
     border:
         2px solid
         rgba(77, 166, 255, 0.45);
-
     box-shadow:
         0 15px 35px
         rgba(0, 153, 255, 0.08);
-
+    box-sizing: border-box;
 }
 
 
@@ -292,20 +204,13 @@
 ========================================================== */
 
 .input-label {
-
     display: block;
-
     margin-bottom: 10px;
-
     color:
         var(--aero-space-blue);
-
     font-size: 11px;
-
     font-weight: 900;
-
     letter-spacing: 2px;
-
 }
 
 
@@ -314,63 +219,42 @@
 ========================================================== */
 
 .number-input {
-
     width: 100%;
-
     height: 64px;
-
     padding:
         0 20px;
-
     border:
         2px solid
         #D5E4EC;
-
     border-radius: 17px;
-
     outline: none;
-
     color:
         var(--aero-space-blue);
-
     background:
         #FFFFFF;
-
     font-family:
         Consolas,
         "Courier New",
         monospace;
-
     font-size: 18px;
-
     font-weight: 800;
-
     box-sizing: border-box;
-
     transition:
         border 0.25s ease,
         box-shadow 0.25s ease;
-
 }
 
-
 .number-input:focus {
-
     border-color:
         var(--aero-sky-blue);
-
     box-shadow:
         0 0 0 4px
         rgba(0, 153, 255, 0.10);
-
 }
 
-
 .number-input::placeholder {
-
     color:
         #9BAAB5;
-
 }
 
 
@@ -379,36 +263,22 @@
 ========================================================== */
 
 .input-help {
-
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     margin-top: 12px;
-
     color:
         rgba(11, 29, 58, 0.58);
-
     font-size: 12px;
-
 }
 
-
 .help-dot {
-
     width: 9px;
-
     height: 9px;
-
     flex-shrink: 0;
-
     border-radius: 50%;
-
     background:
         var(--aero-aqua);
-
 }
 
 
@@ -417,18 +287,12 @@
 ========================================================== */
 
 .input-error {
-
     min-height: 20px;
-
     margin-top: 9px;
-
     color:
         #E74C3C;
-
     font-size: 12px;
-
     font-weight: 700;
-
 }
 
 
@@ -437,62 +301,40 @@
 ========================================================== */
 
 .preview-box {
-
     min-height: 54px;
-
     margin-top: 17px;
-
     padding:
         10px 14px;
-
     display: flex;
-
     align-items: center;
-
     gap: 9px;
-
     overflow-x: auto;
-
     border-radius: 15px;
-
     background:
         var(--aero-deep-navy);
-
+    box-sizing: border-box;
 }
 
-
 .preview-number {
-
     min-width: 37px;
-
     height: 34px;
-
     padding:
         0 8px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 10px;
-
     color:
         white;
-
     background:
         rgba(77, 166, 255, 0.22);
-
     font-family:
         Consolas,
         "Courier New",
         monospace;
-
     font-size: 13px;
-
     font-weight: 800;
-
+    flex-shrink: 0;
 }
 
 
@@ -501,63 +343,41 @@
 ========================================================== */
 
 .input-actions {
-
     display: grid;
-
     grid-template-columns:
         1fr 1fr;
-
     gap: 13px;
-
     margin-top: 22px;
-
 }
 
-
 .input-button {
-
     height: 62px;
-
     border: none;
-
     border-radius: 18px;
-
     font-family:
         inherit;
-
     font-size: 13px;
-
     font-weight: 900;
-
     letter-spacing: 1px;
-
     cursor: pointer;
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         opacity 0.2s ease;
-
+    box-sizing: border-box;
 }
 
-
 .input-button:hover:not(:disabled) {
-
     transform:
         translateY(-3px);
-
     box-shadow:
         0 12px 25px
         rgba(5, 12, 26, 0.18);
-
 }
 
-
 .input-button:active:not(:disabled) {
-
     transform:
         translateY(0);
-
 }
 
 
@@ -566,13 +386,10 @@
 ========================================================== */
 
 .back-button {
-
     color:
         var(--aero-space-blue);
-
     background:
         #EAF3F7;
-
 }
 
 
@@ -581,105 +398,591 @@
 ========================================================== */
 
 .build-button {
-
     color:
         white;
-
     background:
         linear-gradient(
             135deg,
             var(--aero-sky-blue),
             var(--aero-aqua)
         );
-
 }
 
-
 .build-button:disabled {
-
     cursor:
         not-allowed;
-
     opacity:
         0.42;
-
     box-shadow:
         none;
-
 }
 
 
 /* ==========================================================
-   RESPONSIVE
+   TABLET / PANTALLAS MEDIANAS
 ========================================================== */
 
 @media (max-width: 900px) {
 
-    .input-card {
-
-        grid-template-columns:
-            1fr;
-
+    .input-page {
+        min-height: 100vh;
+        padding: 25px;
     }
 
+    .input-card {
+        width: 100%;
+        max-width: 700px;
+        min-height: 0;
+        grid-template-columns: 1fr;
+    }
 
     .input-mascot-side {
-
-        min-height:
-            300px;
-
+        min-height: 300px;
     }
-
 
     .input-mascot {
-
-        width:
-            60%;
-
+        width: 60%;
+        max-width: 400px;
     }
-
 
     .input-content {
-
-        padding:
-            35px;
-
+        padding: 35px;
     }
-
 }
 
+
+/* ==========================================================
+   TABLET PEQUEÑA / CELULAR GRANDE
+========================================================== */
 
 @media (max-width: 600px) {
 
     .input-page {
-
-        padding:
-            15px;
-
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
+    .input-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: 0;
+        grid-template-columns: 1fr;
+        border-radius: 28px;
+    }
+
+    .input-mascot-side {
+        width: 100%;
+        min-height: 270px;
+    }
+
+    .input-mascot {
+        width: 65%;
+        max-width: 340px;
+    }
 
     .input-content {
-
-        padding:
-            28px 20px;
-
+        width: 100%;
+        padding: 28px 20px;
+        min-width: 0;
     }
-
 
     .input-title {
-
-        font-size:
-            34px;
-
+        font-size: 34px;
     }
 
+    .input-description {
+        max-width: 100%;
+        font-size: 15px;
+    }
+
+    .number-input-box {
+        width: 100%;
+        max-width: 100%;
+    }
 
     .input-actions {
-
+        width: 100%;
         grid-template-columns:
             1fr;
+    }
+}
 
+
+/* ==========================================================
+   CELULAR — 480px
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .input-page {
+        padding: 10px;
+        align-items: flex-start;
     }
 
+    .input-card {
+        width: 100%;
+        border-radius: 24px;
+    }
+
+    .input-mascot-side {
+        min-height: 230px;
+    }
+
+    .input-mascot {
+        width: 70%;
+        max-width: 300px;
+    }
+
+    .input-content {
+        padding: 24px 17px 20px;
+    }
+
+    .input-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .input-title {
+        font-size: 30px;
+        line-height: 1.08;
+    }
+
+    .input-description {
+        margin-top: 13px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .number-input-box {
+        margin-top: 20px;
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .input-label {
+        margin-bottom: 9px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .number-input {
+        width: 100%;
+        height: 58px;
+        padding: 0 14px;
+        font-size: 16px;
+    }
+
+    .input-help {
+        align-items: flex-start;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .preview-box {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 14px;
+        padding: 8px 10px;
+        gap: 7px;
+    }
+
+    .preview-number {
+        min-width: 32px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .input-actions {
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .input-button {
+        width: 100%;
+        height: 56px;
+        border-radius: 16px;
+        font-size: 12px;
+    }
+}
+
+
+/* ==========================================================
+   CELULAR — 390px
+========================================================== */
+
+@media (max-width: 390px) {
+
+    .input-page {
+        padding: 8px;
+    }
+
+    .input-card {
+        border-radius: 21px;
+    }
+
+    .input-mascot-side {
+        min-height: 205px;
+    }
+
+    .input-mascot {
+        width: 74%;
+        max-width: 280px;
+    }
+
+    .input-content {
+        padding: 21px 14px 17px;
+    }
+
+    .input-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.7px;
+    }
+
+    .input-title {
+        font-size: 27px;
+    }
+
+    .input-description {
+        font-size: 13px;
+    }
+
+    .number-input-box {
+        margin-top: 17px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .number-input {
+        height: 54px;
+        padding: 0 12px;
+        font-size: 15px;
+    }
+
+    .input-help {
+        font-size: 10px;
+    }
+
+    .preview-box {
+        min-height: 44px;
+    }
+
+    .preview-number {
+        min-width: 29px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .input-button {
+        height: 53px;
+        font-size: 11px;
+    }
+}
+
+
+/* ==========================================================
+   CELULAR — 375px
+========================================================== */
+
+@media (max-width: 375px) {
+
+    .input-page {
+        padding: 6px;
+    }
+
+    .input-card {
+        border-radius: 19px;
+    }
+
+    .input-mascot-side {
+        min-height: 190px;
+    }
+
+    .input-mascot {
+        width: 76%;
+    }
+
+    .input-content {
+        padding: 19px 12px 15px;
+    }
+
+    .input-title {
+        font-size: 25px;
+    }
+
+    .input-description {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .number-input-box {
+        padding: 12px;
+        margin-top: 15px;
+    }
+
+    .input-label {
+        font-size: 9px;
+    }
+
+    .number-input {
+        height: 51px;
+        font-size: 14px;
+    }
+
+    .input-help {
+        font-size: 9px;
+    }
+
+    .preview-box {
+        min-height: 41px;
+        padding: 7px 8px;
+    }
+
+    .preview-number {
+        min-width: 27px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .input-actions {
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .input-button {
+        height: 50px;
+        border-radius: 14px;
+        font-size: 10px;
+    }
+}
+
+
+/* ==========================================================
+   CELULARES MUY PEQUEÑOS — 320px
+========================================================== */
+
+@media (max-width: 340px) {
+
+    .input-page {
+        padding: 4px;
+    }
+
+    .input-card {
+        width: 100%;
+        border-radius: 17px;
+    }
+
+    .input-mascot-side {
+        min-height: 175px;
+    }
+
+    .input-mascot {
+        width: 78%;
+    }
+
+    .input-content {
+        padding: 17px 10px 13px;
+    }
+
+    .input-eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+    .input-title {
+        font-size: 23px;
+    }
+
+    .input-description {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .number-input-box {
+        padding: 10px;
+        margin-top: 13px;
+        border-radius: 16px;
+    }
+
+    .input-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .number-input {
+        height: 48px;
+        padding: 0 10px;
+        font-size: 13px;
+        border-radius: 14px;
+    }
+
+    .input-help {
+        gap: 5px;
+        font-size: 8px;
+    }
+
+    .help-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .preview-box {
+        min-height: 38px;
+        margin-top: 11px;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .preview-number {
+        min-width: 25px;
+        height: 24px;
+        padding: 0 5px;
+        font-size: 9px;
+        border-radius: 8px;
+    }
+
+    .input-actions {
+        gap: 7px;
+        margin-top: 12px;
+    }
+
+    .input-button {
+        height: 47px;
+        border-radius: 13px;
+        font-size: 9px;
+        letter-spacing: 0.7px;
+    }
+}
+
+
+/* ==========================================================
+   CELULAR EN HORIZONTAL
+========================================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+
+    .input-page {
+        min-height: 100dvh;
+        height: auto;
+        padding: 10px;
+        align-items: flex-start;
+        justify-content: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .input-card {
+        width: 100%;
+        max-width: 900px;
+        min-height: 0;
+        grid-template-columns: 40% 60%;
+    }
+
+    .input-mascot-side {
+        min-height: 450px;
+    }
+
+    .input-mascot {
+        width: 85%;
+        max-width: 350px;
+    }
+
+    .input-content {
+        padding: 25px;
+    }
+
+    .input-title {
+        font-size: 30px;
+    }
+
+    .input-description {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .number-input-box {
+        margin-top: 14px;
+        padding: 15px;
+    }
+
+    .number-input {
+        height: 52px;
+    }
+
+    .preview-box {
+        min-height: 45px;
+        margin-top: 12px;
+    }
+
+    .input-actions {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 14px;
+    }
+
+    .input-button {
+        height: 50px;
+    }
+}
+
+
+/* ==========================================================
+   PANTALLAS TÁCTILES
+========================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .input-button {
+        min-height: 52px;
+    }
+
+    .number-input {
+        min-height: 52px;
+    }
+
+    .input-button:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .input-button:active {
+        transform: scale(0.98);
+    }
+}
+
+
+/* ==========================================================
+   SEGURIDAD CONTRA DESBORDAMIENTO
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .input-page,
+    .input-card,
+    .input-mascot-side,
+    .input-content,
+    .number-input-box,
+    .number-input,
+    .preview-box,
+    .input-actions,
+    .input-button {
+        max-width: 100%;
+    }
+
+    .input-card,
+    .input-content,
+    .number-input-box {
+        box-sizing: border-box;
+    }
+
+    .input-title,
+    .input-description,
+    .input-help,
+    .input-error {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
 }
