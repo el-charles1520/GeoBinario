@@ -1,73 +1,568 @@
-```css
 /* ==========================================================
    GEOBINARIO
-   PANTALLA DE INGRESO DE NÚMEROS
+   PANTALLA DEL ÁRBOL BINARIO
 ========================================================== */
 
-.input-page {
+
+/* ==========================================================
+   PÁGINA
+========================================================== */
+
+.tree-page {
+
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 35px;
-}
 
+    padding: 35px 45px;
 
-/* ==========================================================
-   TARJETA PRINCIPAL
-========================================================== */
-
-.input-card {
-    width: min(1250px, 95vw);
-    min-height: 680px;
-    display: grid;
-    grid-template-columns: 48% 52%;
-    overflow: hidden;
-    position: relative;
-    border-radius: 35px;
-    background:
-        rgba(255, 255, 255, 0.88);
-    box-shadow:
-        0 30px 80px
-        rgba(5, 12, 26, 0.18);
-    backdrop-filter:
-        blur(15px);
-}
-
-
-/* ==========================================================
-   LADO DE LA MASCOTA
-========================================================== */
-
-.input-mascot-side {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
     background:
         linear-gradient(
-            145deg,
-            rgba(77, 166, 255, 0.12),
-            rgba(0, 204, 153, 0.08)
+            180deg,
+            #ffffff 0%,
+            #f7fcff 100%
         );
+
 }
 
-.input-mascot-side::before {
-    content: "";
+
+/* ==========================================================
+   ENCABEZADO
+========================================================== */
+
+.tree-header {
+
+    max-width: 1450px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.tree-eyebrow {
+
+    margin-bottom: 7px;
+
+    color:
+        var(--aero-sky-blue);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+}
+
+
+.tree-header h1 {
+
+    margin: 0;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 38px;
+
+    font-weight: 900;
+
+}
+
+
+.tree-header h1 span {
+
+    color:
+        var(--aero-sky-blue);
+
+}
+
+
+.tree-header p {
+
+    max-width: 650px;
+
+    margin:
+        10px 0 0;
+
+    color:
+        rgba(11,29,58,.62);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+}
+
+
+.tree-counter {
+
+    min-width: 130px;
+
+    padding:
+        18px 24px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background:
+        var(--aero-space-blue);
+
+    box-shadow:
+        0 12px 25px
+        rgba(5,12,26,.14);
+
+}
+
+
+.tree-counter span {
+
+    display: block;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.tree-counter strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+}
+
+
+/* ==========================================================
+   DISTRIBUCIÓN
+========================================================== */
+
+.tree-layout {
+
+    max-width: 1450px;
+
+    min-height: 620px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        330px;
+
+    gap: 25px;
+
+}
+
+
+/* ==========================================================
+   TABLERO
+========================================================== */
+
+.tree-board {
+
+    min-width: 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        2px solid
+        rgba(77,166,255,.45);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    box-shadow:
+        0 20px 50px
+        rgba(5,12,26,.10);
+
+}
+
+
+/* ==========================================================
+   TÍTULO DEL TABLERO
+========================================================== */
+
+.board-title {
+
     position: absolute;
-    width: 480px;
-    height: 480px;
-    top: -160px;
-    left: -180px;
+
+    z-index: 20;
+
+    top: 22px;
+
+    left: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.status-dot {
+
+    width: 10px;
+
+    height: 10px;
+
     border-radius: 50%;
+
+    background:
+        var(--aero-aqua);
+
+    box-shadow:
+        0 0 12px
+        rgba(0,204,153,.55);
+
+}
+
+
+/* ==========================================================
+   ÁREA DEL ÁRBOL
+========================================================== */
+
+.tree-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 535px;
+
+    margin-top: 35px;
+
+    overflow: hidden;
+
+    background-color:
+        #ffffff;
+
+    background-image:
+
+        linear-gradient(
+            rgba(77,166,255,.08) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(77,166,255,.08) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        32px 32px;
+
+}
+
+
+/* ==========================================================
+   SVG
+========================================================== */
+
+.tree-svg {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+
+}
+
+
+/* ==========================================================
+   LÍNEAS
+========================================================== */
+
+.tree-line {
+
+    stroke:
+        var(--aero-light-blue);
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+    opacity: 0;
+
+    animation:
+        lineAppear .45s ease forwards;
+
+}
+
+
+.tree-line.active {
+
+    stroke:
+        var(--aero-aqua);
+
+    stroke-width: 5;
+
+}
+
+
+/* ==========================================================
+   NODOS
+========================================================== */
+
+.tree-nodes {
+
+    position: absolute;
+
+    inset: 0;
+
+}
+
+
+.tree-node {
+
+    position: absolute;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        4px solid white;
+
+    border-radius: 50%;
+
+    color: white;
+
     background:
         linear-gradient(
             135deg,
             var(--aero-sky-blue),
             var(--aero-aqua)
         );
-    opacity: 0.12;
+
+    box-shadow:
+
+        0 7px 15px
+        rgba(0,153,255,.25),
+
+        0 0 0 2px
+        rgba(0,153,255,.10);
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    opacity: 0;
+
+    animation:
+        nodeAppear .55s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+
+}
+
+
+.tree-node.active {
+
+    box-shadow:
+
+        0 0 0 7px
+        rgba(0,204,153,.18),
+
+        0 0 30px
+        rgba(0,204,153,.45);
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.12);
+
+}
+
+
+@keyframes nodeAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.2);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes lineAppear {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PANEL DE OPERACIÓN
+========================================================== */
+
+.operation-panel {
+
+    position: absolute;
+
+    z-index: 30;
+
+    left: 25px;
+
+    right: 25px;
+
+    bottom: 20px;
+
+    min-height: 70px;
+
+    padding:
+        12px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 18px;
+
+    background:
+        var(--aero-deep-navy);
+
+    box-shadow:
+        0 12px 25px
+        rgba(5,12,26,.18);
+
+}
+
+
+.operation-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: white;
+
+    background:
+        var(--aero-aqua);
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+}
+
+
+.operation-panel small {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color:
+        rgba(255,255,255,.50);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.operation-panel strong {
+
+    color: white;
+
+    font-size: 14px;
+
 }
 
 
@@ -75,712 +570,668 @@
    MASCOTA
 ========================================================== */
 
-.input-mascot {
-    position: relative;
-    z-index: 2;
-    width: 92%;
-    max-width: 520px;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    object-position: bottom;
-    filter:
-        drop-shadow(
-            0 22px 22px
-            rgba(5, 12, 26, 0.20)
-        );
-    animation:
-        inputMascotFloat 4s ease-in-out infinite;
+.mascot-panel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
 }
 
-@keyframes inputMascotFloat {
+
+.mascot-card {
+
+    position: relative;
+
+    flex: 1;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eaf8ff,
+            #ffffff
+        );
+
+    border:
+        2px solid
+        rgba(77,166,255,.30);
+
+    box-shadow:
+        0 20px 45px
+        rgba(5,12,26,.10);
+
+}
+
+
+.mascot-message {
+
+    position: relative;
+
+    z-index: 5;
+
+    margin: 25px;
+
+    padding: 17px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    box-shadow:
+        0 10px 25px
+        rgba(5,12,26,.08);
+
+}
+
+
+.mascot-message span {
+
+    color:
+        var(--aero-sky-blue);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.mascot-message p {
+
+    margin:
+        7px 0 0;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    font-weight: 800;
+
+}
+
+
+.mascot-image-container {
+
+    position: relative;
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+}
+
+
+.tree-mascot {
+
+    width: 100%;
+
+    max-height: 430px;
+
+    object-fit: contain;
+
+    object-position: bottom;
+
+    filter:
+        drop-shadow(
+            0 18px 18px
+            rgba(5,12,26,.18)
+        );
+
+    animation:
+        mascotFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes mascotFloat {
+
     0%,
     100% {
+
         transform:
             translateY(0);
+
     }
 
     50% {
+
         transform:
             translateY(-8px);
+
     }
+
 }
 
 
 /* ==========================================================
-   CONTENIDO
+   REGLAS
 ========================================================== */
 
-.input-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 55px;
-}
+.rules-card {
 
-.input-eyebrow {
-    color:
-        var(--aero-sky-blue);
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-}
+    padding: 20px;
 
+    border-radius: 22px;
 
-/* ==========================================================
-   TÍTULO
-========================================================== */
-
-.input-title {
-    margin: 0;
-    color:
-        var(--aero-space-blue);
-    font-size: 42px;
-    line-height: 1.05;
-    font-weight: 900;
-}
-
-.input-title span {
-    display: block;
     background:
-        linear-gradient(
-            90deg,
-            var(--aero-sky-blue),
-            var(--aero-aqua),
-            var(--aero-grass-green)
-        );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-
-/* ==========================================================
-   DESCRIPCIÓN
-========================================================== */
-
-.input-description {
-    max-width: 500px;
-    margin-top: 17px;
-    color:
-        rgba(11, 29, 58, 0.68);
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.input-description strong {
-    color:
-        var(--aero-space-blue);
-}
-
-
-/* ==========================================================
-   CAJA DE INGRESO
-========================================================== */
-
-.number-input-box {
-    margin-top: 28px;
-    padding: 24px;
-    border-radius: 25px;
-    background:
-        rgba(255, 255, 255, 0.72);
-    border:
-        2px solid
-        rgba(77, 166, 255, 0.45);
-    box-shadow:
-        0 15px 35px
-        rgba(0, 153, 255, 0.08);
-}
-
-
-/* ==========================================================
-   ETIQUETA
-========================================================== */
-
-.input-label {
-    display: block;
-    margin-bottom: 10px;
-    color:
-        var(--aero-space-blue);
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-
-/* ==========================================================
-   CAMPO DE NÚMEROS
-========================================================== */
-
-.number-input {
-    width: 100%;
-    height: 64px;
-    padding:
-        0 20px;
-    border:
-        2px solid
-        #D5E4EC;
-    border-radius: 17px;
-    outline: none;
-    color:
-        var(--aero-space-blue);
-    background:
-        #FFFFFF;
-    font-family:
-        Consolas,
-        "Courier New",
-        monospace;
-    font-size: 18px;
-    font-weight: 800;
-    box-sizing: border-box;
-    transition:
-        border 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.number-input:focus {
-    border-color:
-        var(--aero-sky-blue);
-    box-shadow:
-        0 0 0 4px
-        rgba(0, 153, 255, 0.10);
-}
-
-.number-input::placeholder {
-    color:
-        #9BAAB5;
-}
-
-
-/* ==========================================================
-   AYUDA
-========================================================== */
-
-.input-help {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 12px;
-    color:
-        rgba(11, 29, 58, 0.58);
-    font-size: 12px;
-}
-
-.help-dot {
-    width: 9px;
-    height: 9px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background:
-        var(--aero-aqua);
-}
-
-
-/* ==========================================================
-   ERROR
-========================================================== */
-
-.input-error {
-    min-height: 20px;
-    margin-top: 9px;
-    color:
-        #E74C3C;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-
-/* ==========================================================
-   PREVISUALIZACIÓN
-========================================================== */
-
-.preview-box {
-    min-height: 54px;
-    margin-top: 17px;
-    padding:
-        10px 14px;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    overflow-x: auto;
-    border-radius: 15px;
-    background:
-        var(--aero-deep-navy);
-}
-
-.preview-number {
-    min-width: 37px;
-    height: 34px;
-    padding:
-        0 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    color:
         white;
-    background:
-        rgba(77, 166, 255, 0.22);
-    font-family:
-        Consolas,
-        "Courier New",
-        monospace;
-    font-size: 13px;
-    font-weight: 800;
-}
 
+    border:
+        2px solid
+        rgba(77,166,255,.25);
 
-/* ==========================================================
-   BOTONES
-========================================================== */
-
-.input-actions {
-    display: grid;
-    grid-template-columns:
-        1fr 1fr;
-    gap: 13px;
-    margin-top: 22px;
-}
-
-.input-button {
-    height: 62px;
-    border: none;
-    border-radius: 18px;
-    font-family:
-        inherit;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.input-button:hover:not(:disabled) {
-    transform:
-        translateY(-3px);
     box-shadow:
         0 12px 25px
-        rgba(5, 12, 26, 0.18);
-}
+        rgba(5,12,26,.07);
 
-.input-button:active:not(:disabled) {
-    transform:
-        translateY(0);
 }
 
 
-/* ==========================================================
-   VOLVER
-========================================================== */
+.rules-title {
 
-.back-button {
+    margin-bottom: 14px;
+
     color:
         var(--aero-space-blue);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.rule {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+}
+
+
+.rule-symbol {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+}
+
+
+.rule-symbol.left {
+
     background:
-        #EAF3F7;
+        var(--aero-sky-blue);
+
+}
+
+
+.rule-symbol.right {
+
+    background:
+        var(--aero-aqua);
+
+}
+
+
+.rule strong {
+
+    display: block;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 12px;
+
+}
+
+
+.rule span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        rgba(11,29,58,.55);
+
+    font-size: 11px;
+
 }
 
 
 /* ==========================================================
-   CONSTRUIR
+   PANEL RECORRIDO
 ========================================================== */
 
-.build-button {
-    color:
+.traversal-panel {
+
+    max-width: 1450px;
+
+    margin:
+        20px auto 0;
+
+    padding:
+        20px 25px;
+
+    border-radius: 22px;
+
+    background:
         white;
+
+    border:
+        2px solid
+        rgba(77,166,255,.30);
+
+    box-shadow:
+        0 12px 30px
+        rgba(5,12,26,.08);
+
+}
+
+
+.traversal-title {
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.traversal-sequence {
+
+    min-height: 58px;
+
+    padding:
+        10px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    border-radius: 15px;
+
+    background:
+        var(--aero-deep-navy);
+
+}
+
+
+.empty-traversal {
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-size: 12px;
+
+}
+
+
+.traversal-number {
+
+    min-width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
     background:
         linear-gradient(
             135deg,
             var(--aero-sky-blue),
             var(--aero-aqua)
         );
+
+    font-weight: 900;
+
+    animation:
+        traversalNumber .45s ease forwards;
+
 }
 
-.build-button:disabled {
-    cursor:
-        not-allowed;
-    opacity:
-        0.42;
+
+.traversal-arrow {
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-weight: 900;
+
+}
+
+
+.traversal-explanation {
+
+    margin-top: 12px;
+
+    color:
+        rgba(11,29,58,.65);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.traversal-explanation strong {
+
+    color:
+        var(--aero-space-blue);
+
+}
+
+
+@keyframes traversalNumber {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.4)
+            translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CONTROLES
+========================================================== */
+
+.tree-controls {
+
+    max-width: 1450px;
+
+    margin:
+        22px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.tree-button {
+
+    min-width: 170px;
+
+    height: 52px;
+
+    padding:
+        0 20px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    font-family:
+        inherit;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        opacity .2s ease;
+
+}
+
+
+.tree-button:hover:not(:disabled) {
+
+    transform:
+        translateY(-2px);
+
     box-shadow:
-        none;
+        0 10px 20px
+        rgba(5,12,26,.13);
+
+}
+
+
+.tree-button:disabled {
+
+    cursor: not-allowed;
+
+    opacity: .45;
+
+}
+
+
+.tree-button.primary {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--aero-sky-blue),
+            var(--aero-aqua)
+        );
+
+}
+
+
+.tree-button.success {
+
+    color: white;
+
+    background:
+        var(--aero-grass-green);
+
+}
+
+
+.tree-button.traversal {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--aero-grass-green),
+            var(--aero-aqua)
+        );
+
+}
+
+
+.tree-button.secondary {
+
+    color:
+        var(--aero-space-blue);
+
+    background:
+        #EAF3F7;
+
 }
 
 
 /* ==========================================================
-   RESPONSIVE ORIGINAL
+   RESPONSIVE
 ========================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
-    .input-card {
+    .tree-layout {
+
         grid-template-columns:
             1fr;
+
     }
 
-    .input-mascot-side {
-        min-height:
-            300px;
+
+    .mascot-panel {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
     }
 
-    .input-mascot {
-        width:
-            60%;
+
+    .mascot-card {
+
+        min-height: 430px;
+
     }
 
-    .input-content {
-        padding:
-            35px;
-    }
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .input-page {
+    .tree-page {
+
         padding:
-            15px;
+            20px 15px;
+
     }
 
-    .input-content {
-        padding:
-            28px 20px;
+
+    .tree-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
     }
 
-    .input-title {
+
+    .tree-header h1 {
+
         font-size:
-            34px;
+            30px;
+
     }
 
-    .input-actions {
+
+    .tree-container {
+
+        height:
+            450px;
+
+    }
+
+
+    .tree-node {
+
+        width:
+            48px;
+
+        height:
+            48px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .mascot-panel {
+
         grid-template-columns:
             1fr;
-    }
-}
 
-
-/* ==========================================================
-   RESPONSIVE EXTRA — CELULARES
-   NO MODIFICA EL DISEÑO ORIGINAL
-========================================================== */
-
-@media (max-width: 480px) {
-
-    .input-page {
-        min-height: 100dvh;
-        padding: 12px;
-        box-sizing: border-box;
     }
 
-    .input-card {
+
+    .tree-button {
+
         width: 100%;
-        min-height: auto;
-        border-radius: 26px;
+
     }
 
-    .input-mascot-side {
-        min-height: 245px;
-    }
-
-    .input-mascot {
-        width: 72%;
-        max-width: 330px;
-    }
-
-    .input-content {
-        padding: 25px 18px 22px;
-    }
-
-    .input-eyebrow {
-        font-size: 10px;
-        letter-spacing: 2px;
-        margin-bottom: 8px;
-    }
-
-    .input-title {
-        font-size: 30px;
-        line-height: 1.08;
-    }
-
-    .input-description {
-        margin-top: 13px;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .number-input-box {
-        margin-top: 20px;
-        padding: 17px;
-        border-radius: 21px;
-    }
-
-    .input-label {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-    }
-
-    .number-input {
-        height: 58px;
-        padding: 0 15px;
-        font-size: 16px;
-    }
-
-    .input-help {
-        font-size: 11px;
-        line-height: 1.4;
-    }
-
-    .preview-box {
-        min-height: 48px;
-        margin-top: 14px;
-        padding: 8px 10px;
-        gap: 7px;
-    }
-
-    .preview-number {
-        min-width: 32px;
-        height: 30px;
-        padding: 0 6px;
-        font-size: 12px;
-    }
-
-    .input-actions {
-        gap: 10px;
-        margin-top: 18px;
-    }
-
-    .input-button {
-        height: 56px;
-        border-radius: 16px;
-        font-size: 12px;
-    }
 }
-
-
-/* ==========================================================
-   CELULARES PEQUEÑOS
-   360px — 390px
-========================================================== */
-
-@media (max-width: 390px) {
-
-    .input-page {
-        padding: 8px;
-    }
-
-    .input-card {
-        border-radius: 22px;
-    }
-
-    .input-mascot-side {
-        min-height: 215px;
-    }
-
-    .input-mascot {
-        width: 75%;
-    }
-
-    .input-content {
-        padding: 22px 15px 18px;
-    }
-
-    .input-title {
-        font-size: 27px;
-    }
-
-    .input-description {
-        font-size: 13px;
-    }
-
-    .number-input-box {
-        padding: 14px;
-        margin-top: 17px;
-    }
-
-    .number-input {
-        height: 54px;
-        font-size: 15px;
-    }
-
-    .input-help {
-        font-size: 10px;
-    }
-
-    .preview-box {
-        min-height: 44px;
-    }
-
-    .preview-number {
-        min-width: 29px;
-        height: 28px;
-        font-size: 11px;
-    }
-
-    .input-button {
-        height: 53px;
-        font-size: 11px;
-    }
-}
-
-
-/* ==========================================================
-   CELULARES MUY PEQUEÑOS
-   320px — 359px
-========================================================== */
-
-@media (max-width: 359px) {
-
-    .input-page {
-        padding: 6px;
-    }
-
-    .input-card {
-        border-radius: 19px;
-    }
-
-    .input-mascot-side {
-        min-height: 190px;
-    }
-
-    .input-mascot {
-        width: 78%;
-    }
-
-    .input-content {
-        padding: 19px 12px 15px;
-    }
-
-    .input-eyebrow {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-    }
-
-    .input-title {
-        font-size: 24px;
-    }
-
-    .input-description {
-        font-size: 12px;
-        line-height: 1.45;
-    }
-
-    .number-input-box {
-        padding: 12px;
-        border-radius: 18px;
-    }
-
-    .input-label {
-        font-size: 9px;
-    }
-
-    .number-input {
-        height: 50px;
-        padding: 0 12px;
-        font-size: 14px;
-    }
-
-    .input-help {
-        font-size: 9px;
-        gap: 6px;
-    }
-
-    .help-dot {
-        width: 7px;
-        height: 7px;
-    }
-
-    .preview-box {
-        min-height: 40px;
-        padding: 7px 8px;
-    }
-
-    .preview-number {
-        min-width: 27px;
-        height: 26px;
-        font-size: 10px;
-    }
-
-    .input-actions {
-        gap: 8px;
-        margin-top: 14px;
-    }
-
-    .input-button {
-        height: 49px;
-        border-radius: 14px;
-        font-size: 10px;
-    }
-}
-
-
-/* ==========================================================
-   CELULARES EN MODO PAISAJE
-========================================================== */
-
-@media (max-height: 600px) and (orientation: landscape) {
-
-    .input-page {
-        min-height: 100dvh;
-        padding: 10px;
-        align-items: flex-start;
-        overflow-y: auto;
-    }
-
-    .input-card {
-        min-height: auto;
-    }
-
-    .input-mascot-side {
-        min-height: 240px;
-    }
-
-    .input-mascot {
-        width: 55%;
-    }
-
-    .input-content {
-        padding: 25px;
-    }
-
-    .input-title {
-        font-size: 30px;
-    }
-
-    .number-input-box {
-        margin-top: 15px;
-    }
-
-    .input-actions {
-        margin-top: 15px;
-    }
-}
-
-
-/* ==========================================================
-   PANTALLAS TÁCTILES
-   EVITA EFECTOS INCÓMODOS AL TOCAR
-========================================================== */
-
-@media (hover: none) and (pointer: coarse) {
-
-    .input-button {
-        min-height: 52px;
-    }
-
-    .number-input {
-        min-height: 52px;
-    }
-
-    .input-button:hover {
-        transform: none;
-        box-shadow: none;
-    }
-
-    .input-button:active {
-        transform: scale(0.98);
-    }
-}
-```
