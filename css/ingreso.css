@@ -1,4 +1,3 @@
-
 /* ==========================================================
    GEOBINARIO
    PANTALLA DE INGRESO DE NÚMEROS
@@ -6,6 +5,8 @@
 
 .input-page {
     min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,6 +221,7 @@
 
 .number-input {
     width: 100%;
+    max-width: 100%;
     height: 64px;
     padding:
         0 20px;
@@ -351,6 +353,7 @@
 }
 
 .input-button {
+    width: 100%;
     height: 62px;
     border: none;
     border-radius: 18px;
@@ -419,20 +422,19 @@
 
 
 /* ==========================================================
-   TABLET / PANTALLAS MEDIANAS
+   TABLET
 ========================================================== */
 
 @media (max-width: 900px) {
 
     .input-page {
-        min-height: 100vh;
         padding: 25px;
     }
 
     .input-card {
         width: 100%;
         max-width: 700px;
-        min-height: 0;
+        min-height: auto;
         grid-template-columns: 1fr;
     }
 
@@ -446,164 +448,173 @@
     }
 
     .input-content {
+        width: 100%;
         padding: 35px;
     }
 }
 
 
 /* ==========================================================
-   TABLET PEQUEÑA / CELULAR GRANDE
+   CELULAR — HASTA 600px
 ========================================================== */
 
 @media (max-width: 600px) {
 
-    .input-page {
+    html,
+    body {
         width: 100%;
-        min-height: 100vh;
-        min-height: 100dvh;
-        padding: 15px;
-        box-sizing: border-box;
+        max-width: 100%;
         overflow-x: hidden;
     }
 
+    .input-page {
+        width: 100%;
+        min-width: 0;
+        min-height: 100dvh;
+        padding: 12px;
+        align-items: flex-start;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .input-card {
         width: 100%;
         max-width: 100%;
+        min-width: 0;
         min-height: 0;
         grid-template-columns: 1fr;
-        border-radius: 28px;
+        border-radius: 26px;
+        box-sizing: border-box;
     }
 
     .input-mascot-side {
         width: 100%;
-        min-height: 270px;
-    }
-
-    .input-mascot {
-        width: 65%;
-        max-width: 340px;
-    }
-
-    .input-content {
-        width: 100%;
-        padding: 28px 20px;
         min-width: 0;
+        min-height: 240px;
+        box-sizing: border-box;
     }
 
-    .input-title {
-        font-size: 34px;
-    }
-
-    .input-description {
-        max-width: 100%;
-        font-size: 15px;
-    }
-
-    .number-input-box {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .input-actions {
-        width: 100%;
-        grid-template-columns:
-            1fr;
-    }
-}
-
-
-/* ==========================================================
-   CELULAR — 480px
-========================================================== */
-
-@media (max-width: 480px) {
-
-    .input-page {
-        padding: 10px;
-        align-items: flex-start;
-    }
-
-    .input-card {
-        width: 100%;
-        border-radius: 24px;
-    }
-
-    .input-mascot-side {
-        min-height: 230px;
+    .input-mascot-side::before {
+        width: 380px;
+        height: 380px;
+        top: -140px;
+        left: -150px;
     }
 
     .input-mascot {
         width: 70%;
-        max-width: 300px;
+        max-width: 320px;
+        height: auto;
     }
 
     .input-content {
-        padding: 24px 17px 20px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 25px 18px 22px;
+        box-sizing: border-box;
     }
 
     .input-eyebrow {
         font-size: 10px;
         letter-spacing: 2px;
-        margin-bottom: 8px;
     }
 
     .input-title {
-        font-size: 30px;
+        max-width: 100%;
+        font-size: clamp(26px, 8vw, 34px);
         line-height: 1.08;
+        overflow-wrap: break-word;
+    }
+
+    .input-title span {
+        max-width: 100%;
     }
 
     .input-description {
-        margin-top: 13px;
+        width: 100%;
+        max-width: 100%;
         font-size: 14px;
         line-height: 1.5;
+        overflow-wrap: break-word;
     }
 
     .number-input-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         margin-top: 20px;
         padding: 16px;
-        border-radius: 20px;
+        border-radius: 21px;
+        box-sizing: border-box;
     }
 
     .input-label {
-        margin-bottom: 9px;
+        max-width: 100%;
         font-size: 10px;
         letter-spacing: 1.5px;
+        overflow-wrap: break-word;
     }
 
     .number-input {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
         height: 58px;
         padding: 0 14px;
         font-size: 16px;
+        box-sizing: border-box;
     }
 
     .input-help {
+        width: 100%;
+        max-width: 100%;
         align-items: flex-start;
         font-size: 11px;
         line-height: 1.4;
+        overflow-wrap: break-word;
+    }
+
+    .input-error {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
     }
 
     .preview-box {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
         min-height: 48px;
         margin-top: 14px;
         padding: 8px 10px;
         gap: 7px;
+        box-sizing: border-box;
     }
 
     .preview-number {
         min-width: 32px;
         height: 30px;
+        padding: 0 6px;
         font-size: 12px;
+        flex-shrink: 0;
     }
 
     .input-actions {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        grid-template-columns: 1fr;
         gap: 10px;
         margin-top: 18px;
+        box-sizing: border-box;
     }
 
     .input-button {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
         height: 56px;
         border-radius: 16px;
         font-size: 12px;
@@ -612,7 +623,7 @@
 
 
 /* ==========================================================
-   CELULAR — 390px
+   CELULARES DE 390px O MENOS
 ========================================================== */
 
 @media (max-width: 390px) {
@@ -622,20 +633,20 @@
     }
 
     .input-card {
-        border-radius: 21px;
+        border-radius: 22px;
     }
 
     .input-mascot-side {
-        min-height: 205px;
+        min-height: 210px;
     }
 
     .input-mascot {
         width: 74%;
-        max-width: 280px;
+        max-width: 290px;
     }
 
     .input-content {
-        padding: 21px 14px 17px;
+        padding: 22px 14px 18px;
     }
 
     .input-eyebrow {
@@ -644,7 +655,7 @@
     }
 
     .input-title {
-        font-size: 27px;
+        font-size: clamp(24px, 7.5vw, 29px);
     }
 
     .input-description {
@@ -654,7 +665,7 @@
     .number-input-box {
         margin-top: 17px;
         padding: 14px;
-        border-radius: 18px;
+        border-radius: 19px;
     }
 
     .number-input {
@@ -677,6 +688,11 @@
         font-size: 11px;
     }
 
+    .input-actions {
+        gap: 9px;
+        margin-top: 16px;
+    }
+
     .input-button {
         height: 53px;
         font-size: 11px;
@@ -685,10 +701,10 @@
 
 
 /* ==========================================================
-   CELULAR — 375px
+   CELULARES PEQUEÑOS — 360px
 ========================================================== */
 
-@media (max-width: 375px) {
+@media (max-width: 360px) {
 
     .input-page {
         padding: 6px;
@@ -704,14 +720,20 @@
 
     .input-mascot {
         width: 76%;
+        max-width: 270px;
     }
 
     .input-content {
         padding: 19px 12px 15px;
     }
 
+    .input-eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+    }
+
     .input-title {
-        font-size: 25px;
+        font-size: clamp(22px, 7.2vw, 26px);
     }
 
     .input-description {
@@ -720,32 +742,46 @@
     }
 
     .number-input-box {
-        padding: 12px;
         margin-top: 15px;
+        padding: 12px;
+        border-radius: 17px;
     }
 
     .input-label {
         font-size: 9px;
+        letter-spacing: 1px;
     }
 
     .number-input {
         height: 51px;
+        padding: 0 10px;
         font-size: 14px;
+        border-radius: 14px;
     }
 
     .input-help {
+        gap: 6px;
         font-size: 9px;
+    }
+
+    .help-dot {
+        width: 8px;
+        height: 8px;
     }
 
     .preview-box {
         min-height: 41px;
+        margin-top: 12px;
         padding: 7px 8px;
+        border-radius: 13px;
     }
 
     .preview-number {
         min-width: 27px;
         height: 26px;
+        padding: 0 5px;
         font-size: 10px;
+        border-radius: 9px;
     }
 
     .input-actions {
@@ -757,6 +793,7 @@
         height: 50px;
         border-radius: 14px;
         font-size: 10px;
+        letter-spacing: 0.7px;
     }
 }
 
@@ -765,23 +802,23 @@
    CELULARES MUY PEQUEÑOS — 320px
 ========================================================== */
 
-@media (max-width: 340px) {
+@media (max-width: 320px) {
 
     .input-page {
         padding: 4px;
     }
 
     .input-card {
-        width: 100%;
         border-radius: 17px;
     }
 
     .input-mascot-side {
-        min-height: 175px;
+        min-height: 170px;
     }
 
     .input-mascot {
         width: 78%;
+        max-width: 250px;
     }
 
     .input-content {
@@ -789,12 +826,12 @@
     }
 
     .input-eyebrow {
-        font-size: 8px;
-        letter-spacing: 1.2px;
+        font-size: 7px;
+        letter-spacing: 1px;
     }
 
     .input-title {
-        font-size: 23px;
+        font-size: 21px;
     }
 
     .input-description {
@@ -803,26 +840,26 @@
     }
 
     .number-input-box {
-        padding: 10px;
         margin-top: 13px;
-        border-radius: 16px;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .input-label {
         font-size: 8px;
-        letter-spacing: 1px;
+        letter-spacing: 0.8px;
     }
 
     .number-input {
         height: 48px;
-        padding: 0 10px;
+        padding: 0 9px;
         font-size: 13px;
-        border-radius: 14px;
+        border-radius: 13px;
     }
 
     .input-help {
-        gap: 5px;
         font-size: 8px;
+        gap: 5px;
     }
 
     .help-dot {
@@ -832,17 +869,17 @@
 
     .preview-box {
         min-height: 38px;
-        margin-top: 11px;
+        margin-top: 10px;
         padding: 6px;
-        border-radius: 12px;
+        border-radius: 11px;
     }
 
     .preview-number {
         min-width: 25px;
         height: 24px;
-        padding: 0 5px;
+        padding: 0 4px;
         font-size: 9px;
-        border-radius: 8px;
+        border-radius: 7px;
     }
 
     .input-actions {
@@ -852,15 +889,15 @@
 
     .input-button {
         height: 47px;
-        border-radius: 13px;
+        border-radius: 12px;
         font-size: 9px;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.5px;
     }
 }
 
 
 /* ==========================================================
-   CELULAR EN HORIZONTAL
+   CELULAR HORIZONTAL
 ========================================================== */
 
 @media (max-height: 600px) and (orientation: landscape) {
@@ -871,8 +908,8 @@
         padding: 10px;
         align-items: flex-start;
         justify-content: center;
-        overflow-y: auto;
         overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .input-card {
@@ -883,7 +920,7 @@
     }
 
     .input-mascot-side {
-        min-height: 450px;
+        min-height: 430px;
     }
 
     .input-mascot {
@@ -892,39 +929,39 @@
     }
 
     .input-content {
-        padding: 25px;
+        padding: 22px;
     }
 
     .input-title {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .input-description {
-        font-size: 13px;
-        margin-top: 10px;
+        font-size: 12px;
+        margin-top: 9px;
     }
 
     .number-input-box {
-        margin-top: 14px;
-        padding: 15px;
+        margin-top: 12px;
+        padding: 13px;
     }
 
     .number-input {
-        height: 52px;
+        height: 50px;
     }
 
     .preview-box {
-        min-height: 45px;
-        margin-top: 12px;
+        min-height: 42px;
+        margin-top: 10px;
     }
 
     .input-actions {
         grid-template-columns: 1fr 1fr;
-        margin-top: 14px;
+        margin-top: 12px;
     }
 
     .input-button {
-        height: 50px;
+        height: 47px;
     }
 }
 
@@ -950,39 +987,5 @@
 
     .input-button:active {
         transform: scale(0.98);
-    }
-}
-
-
-/* ==========================================================
-   SEGURIDAD CONTRA DESBORDAMIENTO
-========================================================== */
-
-@media (max-width: 600px) {
-
-    .input-page,
-    .input-card,
-    .input-mascot-side,
-    .input-content,
-    .number-input-box,
-    .number-input,
-    .preview-box,
-    .input-actions,
-    .input-button {
-        max-width: 100%;
-    }
-
-    .input-card,
-    .input-content,
-    .number-input-box {
-        box-sizing: border-box;
-    }
-
-    .input-title,
-    .input-description,
-    .input-help,
-    .input-error {
-        overflow-wrap: anywhere;
-        word-break: normal;
     }
 }
