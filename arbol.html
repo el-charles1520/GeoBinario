@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeoBinario - Árbol Binario</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/arbol.css">
+    <link rel="icon" type="image/png" href="img/carita.png">
+</head>
+
+<body>
+
+<main class="tree-page">
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+
+    <header class="tree-header">
+
+        <div class="header-info">
+
+            <div class="tree-eyebrow">
+                GEOBINARIO
+            </div>
+
+            <h1>
+                Construcción del
+                <span>Árbol Binario</span>
+            </h1>
+
+            <p>
+                Observa cómo cada número encuentra su posición
+                siguiendo las reglas de búsqueda.
+            </p>
+
+        </div>
+
+        <div class="tree-counter">
+
+            <span>NÚMEROS</span>
+
+            <strong id="progressText">
+                0 / 0
+            </strong>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <section class="tree-layout">
+
+
+        <!-- =====================
+             ÁRBOL
+        ====================== -->
+
+        <div class="tree-board">
+
+            <div class="board-title">
+
+                <span class="status-dot"></span>
+
+                ÁRBOL BINARIO DE BÚSQUEDA
+
+            </div>
+
+
+            <div
+                id="treeContainer"
+                class="tree-container"
+            >
+
+                <svg
+                    id="treeSvg"
+                    class="tree-svg"
+                ></svg>
+
+                <div
+                    id="treeNodes"
+                    class="tree-nodes"
+                ></div>
+
+            </div>
+
+
+            <!-- =================
+                 EXPLICACIÓN
+            ================== -->
+
+            <div class="operation-panel">
+
+                <div
+                    id="operationIcon"
+                    class="operation-icon"
+                >
+                    ?
+                </div>
+
+                <div>
+
+                    <small>
+                        PROCESO
+                    </small>
+
+                    <strong id="operationText">
+                        Preparando el árbol...
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================
+             MASCOTA
+        ====================== -->
+
+        <aside class="mascot-panel">
+
+            <div class="mascot-card">
+
+                <div class="mascot-message">
+
+                    <span>
+                        GEOBINARIO
+                    </span>
+
+                    <p id="mascotText">
+                        ¡Vamos a construir
+                        nuestro árbol!
+                    </p>
+
+                </div>
+
+
+                <div class="mascot-image-container">
+
+                    <img
+                        src="img/inteligente.png"
+                        alt="Mascota GeoBinario"
+                        class="tree-mascot"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =================
+                 REGLAS
+            ================== -->
+
+            <div class="rules-card">
+
+                <div class="rules-title">
+                    REGLAS DEL ÁRBOL
+                </div>
+
+
+                <div class="rule">
+
+                    <div class="rule-symbol left">
+                        &lt;
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Menor
+                        </strong>
+
+                        <span>
+                            va a la izquierda
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rule">
+
+                    <div class="rule-symbol right">
+                        &gt;
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Mayor
+                        </strong>
+
+                        <span>
+                            va a la derecha
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <!-- =========================
+         PANEL RECORRIDO
+    ========================== -->
+
+    <section
+        id="traversalPanel"
+        class="traversal-panel"
+    >
+
+        <div class="traversal-title">
+            RECORRIDO INORDEN
+        </div>
+
+
+        <div
+            id="traversalSequence"
+            class="traversal-sequence"
+        >
+
+            <span class="empty-traversal">
+                El recorrido aparecerá aquí.
+            </span>
+
+        </div>
+
+
+        <div
+            id="traversalExplanation"
+            class="traversal-explanation"
+        >
+
+            El recorrido se realiza:
+
+            <strong>
+                izquierda → raíz → derecha
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BOTONES
+    ========================== -->
+
+    <section class="tree-controls">
+
+        <button
+            id="restartButton"
+            class="tree-button secondary"
+        >
+            ↻ REINICIAR
+        </button>
+
+
+        <button
+            id="nextButton"
+            class="tree-button primary"
+        >
+            SIGUIENTE →
+        </button>
+
+
+        <button
+            id="finishButton"
+            class="tree-button success"
+        >
+            COMPLETAR ÁRBOL
+        </button>
+
+
+        <button
+            id="traversalButton"
+            class="tree-button traversal"
+        >
+            VER RECORRIDO →
+        </button>
+
+
+        <button
+            id="backButton"
+            class="tree-button secondary"
+        >
+            ← INGRESAR OTROS NÚMEROS
+        </button>
+
+    </section>
+
+</main>
+
+
+<script src="js/arbol.js"></script>
+
+</body>
+
+</html>
