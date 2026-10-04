@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GeoBinario - Ingresar Números</title>
+
+    <!-- CSS GENERAL DEL PROYECTO -->
+    <link
+        rel="stylesheet"
+        href="css/index.css"
+    >
+    <link rel="icon" type="image/png" href="img/carita.png">
+
+    <!-- CSS EXCLUSIVO DE ESTA PANTALLA -->
+    <link
+        rel="stylesheet"
+        href="css/ingreso.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="input-page">
+
+        <section class="input-card">
+
+
+            <!-- ==============================
+                 MASCOTA
+            =============================== -->
+
+            <div class="input-mascot-side">
+
+                <img
+                    src="img/cuerpocastor.png"
+                    alt="Mascota GeoBinario"
+                    class="input-mascot"
+                >
+
+            </div>
+
+
+            <!-- ==============================
+                 CONTENIDO
+            =============================== -->
+
+            <div class="input-content">
+
+                <div class="input-eyebrow">
+                    COMENZAR
+                </div>
+
+
+                <h1 class="input-title">
+
+                    Ingresa tus
+
+                    <span>NÚMEROS</span>
+
+                </h1>
+
+
+                <p class="input-description">
+
+                    Escribe los valores que deseas utilizar
+                    para construir tu árbol binario de búsqueda.
+
+                    <strong>
+                        Separa cada número utilizando un guion.
+                    </strong>
+
+                </p>
+
+
+                <!-- ==============================
+                     CAJA DE INGRESO
+                =============================== -->
+
+                <div class="number-input-box">
+
+                    <label
+                        class="input-label"
+                        for="numbersInput"
+                    >
+
+                        NÚMEROS DEL ÁRBOL
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="numbersInput"
+                        class="number-input"
+                        value="50-30-70-20-40-60-80"
+                        placeholder="50-30-70-20-40-60-80"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+
+
+                    <div class="input-help">
+
+                        <span class="help-dot"></span>
+
+                        Ejemplo:
+                        50-30-70-20-40-60-80
+
+                    </div>
+
+
+                    <!-- MENSAJE DE ERROR -->
+
+                    <div
+                        id="inputError"
+                        class="input-error"
+                    ></div>
+
+
+                    <!-- PREVISUALIZACIÓN -->
+
+                    <div
+                        id="previewBox"
+                        class="preview-box"
+                    ></div>
+
+
+                    <!-- ==============================
+                         BOTONES
+                    =============================== -->
+
+                    <div class="input-actions">
+
+                        <button
+                            type="button"
+                            class="input-button back-button"
+                            id="backButton"
+                        >
+
+                            ← VOLVER
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="input-button build-button"
+                            id="buildButton"
+                            disabled
+                        >
+
+                            CONSTRUIR ÁRBOL →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/ingreso.js"></script>
+
+</body>
+
+</html>
