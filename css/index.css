@@ -1,0 +1,1335 @@
+:root {
+
+    /* ==============================
+       COLORES AERO
+    ============================== */
+
+    --aero-sky-blue: #0099FF;
+    --aero-light-blue: #4DA6FF;
+
+    --aero-aqua: #00CC99;
+    --aero-mint: #70E1C8;
+
+    --aero-grass-green: #66CC33;
+    --aero-sunny-yellow: #FFCC00;
+
+    --aero-space-blue: #0B1D3A;
+    --aero-deep-navy: #050C1A;
+
+    --aero-white: #FFFFFF;
+
+    --paper: #F8F7F1;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color:
+        var(--aero-space-blue);
+
+    background-color:
+        var(--paper);
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,153,255,.055) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,153,255,.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 28px 28px;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   DECORACIONES DE FONDO
+========================================================= */
+
+.aero-shape {
+
+    position: fixed;
+
+    z-index: -10;
+
+    pointer-events: none;
+
+}
+
+
+.aero-shape-top {
+
+    width: 620px;
+
+    height: 210px;
+
+    top: -135px;
+
+    left: -130px;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--aero-deep-navy),
+            var(--aero-sky-blue),
+            var(--aero-aqua)
+        );
+
+    transform: rotate(-8deg);
+
+}
+
+
+.aero-shape-bottom {
+
+    width: 650px;
+
+    height: 200px;
+
+    right: -180px;
+
+    bottom: -135px;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--aero-space-blue),
+            var(--aero-sky-blue),
+            var(--aero-aqua)
+        );
+
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.app {
+
+    width: min(1450px, 94%);
+
+    margin: 30px auto;
+
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+========================================================= */
+
+.main-card {
+
+    position: relative;
+
+    min-height: 780px;
+
+    display: grid;
+
+    grid-template-columns:
+        59%
+        41%;
+
+    overflow: hidden;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    border:
+        1px solid
+        rgba(255,255,255,.95);
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(5,12,26,.18);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.content {
+
+    padding:
+        42px
+        35px
+        35px
+        55px;
+
+}
+
+
+/* =========================================================
+   MARCA
+========================================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+}
+
+
+.brand-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 12px;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--aero-sky-blue),
+            var(--aero-aqua)
+        );
+
+    box-shadow:
+
+        0 7px 18px
+        rgba(0,153,255,.30);
+
+}
+
+
+/* =========================================================
+   TITULO
+========================================================= */
+
+.eyebrow {
+
+    color:
+        var(--aero-sky-blue);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+}
+
+
+.heading h1 {
+
+    margin-top: 10px;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            60px
+        );
+
+    line-height: 1.05;
+
+}
+
+
+.heading h1 strong {
+
+    display: block;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--aero-sky-blue),
+            var(--aero-aqua),
+            var(--aero-grass-green)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.heading p {
+
+    max-width: 590px;
+
+    margin-top: 17px;
+
+    color:
+        rgba(11,29,58,.72);
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+}
+
+
+/* =========================================================
+   TARJETA DE DEMOSTRACIÓN
+========================================================= */
+
+.demo-card {
+
+    margin-top: 25px;
+
+    padding:
+        17px
+        22px
+        10px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    border:
+        2px solid
+        rgba(77,166,255,.45);
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(0,153,255,.08);
+
+}
+
+
+/* =========================================================
+   ENCABEZADO DEL EJEMPLO
+========================================================= */
+
+.demo-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.live-dot {
+
+    width: 11px;
+
+    height: 11px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--aero-aqua);
+
+    box-shadow:
+        0 0 12px
+        var(--aero-aqua);
+
+    animation:
+        livePulse 1.5s infinite;
+
+}
+
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.3);
+
+    }
+
+}
+
+
+/* =========================================================
+   BARRA DE NUMEROS
+========================================================= */
+
+.number-bar {
+
+    min-height: 52px;
+
+    margin-top: 11px;
+
+    padding:
+        12px
+        20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    overflow-x: auto;
+
+    border-radius: 17px;
+
+    color:
+        white;
+
+    background:
+        var(--aero-deep-navy);
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+}
+
+
+.number-bar::-webkit-scrollbar {
+
+    height: 4px;
+
+}
+
+
+.number-bar::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background:
+        var(--aero-light-blue);
+
+}
+
+
+/* =========================================================
+   NÚMEROS INDIVIDUALES
+========================================================= */
+
+.number-item {
+
+    display: inline-block;
+
+    flex-shrink: 0;
+
+    opacity: .45;
+
+    transition:
+
+        opacity .3s ease,
+
+        color .3s ease,
+
+        transform .3s ease;
+
+}
+
+
+.number-item.active {
+
+    opacity: 1;
+
+    color:
+        var(--aero-mint);
+
+    transform:
+        scale(1.18);
+
+}
+
+
+/* =========================================================
+   ESCENARIO DEL ÁRBOL
+========================================================= */
+
+.tree-stage {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 255px;
+
+    margin-top: 2px;
+
+}
+
+
+/*
+   MUY IMPORTANTE:
+
+   No colocamos ninguna animación
+   CSS sobre los nodos.
+
+   JavaScript será quien controle
+   su aparición.
+*/
+
+#treeSVG {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+
+}
+
+
+/* =========================================================
+   CAPAS SVG
+========================================================= */
+
+#treeConnections {
+
+    pointer-events: none;
+
+}
+
+
+#treeNodes {
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   LÍNEAS DEL ÁRBOL
+========================================================= */
+
+.tree-line {
+
+    fill: none;
+
+    stroke:
+        var(--aero-light-blue);
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+    /*
+       NO poner animation aquí.
+       JavaScript controla
+       strokeDashoffset.
+    */
+
+}
+
+
+/* =========================================================
+   NODOS DEL ÁRBOL
+========================================================= */
+
+.node-circle {
+
+    fill:
+        var(--aero-sky-blue);
+
+    stroke:
+        var(--aero-white);
+
+    stroke-width: 5;
+
+    /*
+       No usar transform aquí.
+       El posicionamiento lo controla
+       el atributo transform del SVG.
+    */
+
+    filter:
+
+        drop-shadow(
+            0 5px 8px
+            rgba(0,153,255,.35)
+        );
+
+}
+
+
+.node-text {
+
+    fill:
+        var(--aero-white);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    text-anchor: middle;
+
+    dominant-baseline: middle;
+
+    pointer-events: none;
+
+    user-select: none;
+
+}
+
+
+/* =========================================================
+   CONTROLES DEL EJEMPLO
+========================================================= */
+
+.demo-controls {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: -4px;
+
+}
+
+
+.arrow-button {
+
+    width: 31px;
+
+    height: 31px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    color:
+        white;
+
+    background:
+        var(--aero-sky-blue);
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+}
+
+
+.arrow-button:hover {
+
+    transform:
+        scale(1.12);
+
+    background:
+        var(--aero-aqua);
+
+}
+
+
+.arrow-button:active {
+
+    transform:
+        scale(.95);
+
+}
+
+
+/* =========================================================
+   PUNTOS
+========================================================= */
+
+.example-dots {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.example-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 20px;
+
+    background:
+        #B7C5CF;
+
+    cursor: pointer;
+
+    transition:
+        width .3s ease,
+        background .3s ease;
+
+}
+
+
+.example-dot.active {
+
+    width: 25px;
+
+    background:
+        var(--aero-aqua);
+
+}
+
+
+/* =========================================================
+   BOTONES PRINCIPALES
+========================================================= */
+
+.main-buttons {
+
+    margin-top: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.main-button {
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        12px
+        15px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+
+        transform .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+
+.main-button:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+
+        0 15px 30px
+        rgba(5,12,26,.20);
+
+}
+
+
+.main-button:active {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.button-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 13px;
+
+    color:
+        white;
+
+    background:
+        rgba(255,255,255,.20);
+
+    font-size: 22px;
+
+}
+
+
+.button-text small {
+
+    display: block;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.button-text strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 16px;
+
+}
+
+
+.blue-button {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--aero-sky-blue),
+            #0074D9
+        );
+
+}
+
+
+.green-button {
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--aero-aqua),
+            #00A77D
+        );
+
+}
+
+
+.yellow-button {
+
+    color:
+        var(--aero-space-blue);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--aero-sunny-yellow),
+            #FFB300
+        );
+
+}
+
+
+/* =========================================================
+   PARTE DERECHA
+========================================================= */
+
+.visual {
+
+    position: relative;
+
+    min-height: 780px;
+
+    overflow: visible;
+
+}
+
+
+/* =========================================================
+   PIZARRA
+========================================================= */
+
+.board {
+
+    position: absolute;
+
+    top: 60px;
+
+    left: 4%;
+
+    width: 310px;
+
+    height: 330px;
+
+    padding:
+        28px
+        20px;
+
+    border:
+        11px solid
+        #94683E;
+
+    border-radius: 24px;
+
+    background:
+        #fffef7;
+
+    transform:
+        rotate(-4deg);
+
+    box-shadow:
+
+        0 22px 40px
+        rgba(5,12,26,.22);
+
+    z-index: 5;
+
+}
+
+
+.board-pin {
+
+    position: absolute;
+
+    top: -24px;
+
+    left: 50%;
+
+    width: 47px;
+
+    height: 34px;
+
+    transform:
+        translateX(-50%);
+
+    border:
+        4px solid
+        white;
+
+    border-radius: 8px;
+
+    background:
+        var(--aero-sky-blue);
+
+}
+
+
+.board-title {
+
+    text-align: center;
+
+    color:
+        var(--aero-space-blue);
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+}
+
+
+.board svg {
+
+    width: 100%;
+
+    height: 240px;
+
+}
+
+
+.board line {
+
+    fill: none;
+
+    stroke:
+        var(--aero-space-blue);
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+
+}
+
+
+.board circle {
+
+    fill:
+        var(--aero-sky-blue);
+
+    stroke:
+        white;
+
+    stroke-width: 5;
+
+    filter:
+
+        drop-shadow(
+            0 5px 5px
+            rgba(0,0,0,.18)
+        );
+
+}
+
+
+.board text {
+
+    fill:
+        white;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    text-anchor: middle;
+
+    dominant-baseline: middle;
+
+}
+
+
+/* =========================================================
+   MASCOTA
+========================================================= */
+
+.mascot-container {
+
+    position: absolute;
+
+    right: -3%;
+
+    bottom: 0;
+
+    width: 76%;
+
+    height: 74%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    z-index: 4;
+
+}
+
+
+.mascot {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position:
+        center bottom;
+
+    filter:
+
+        drop-shadow(
+            0 20px 22px
+            rgba(5,12,26,.20)
+        );
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .main-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .visual {
+
+        min-height: 650px;
+
+    }
+
+
+    .mascot-container {
+
+        width: 70%;
+
+        right: 5%;
+
+    }
+
+
+    .board {
+
+        left: 8%;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .content {
+
+        padding:
+            35px
+            25px;
+
+    }
+
+
+    .main-buttons {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .visual {
+
+        min-height: 600px;
+
+    }
+
+
+    .mascot-container {
+
+        width: 80%;
+
+        right: -5%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .app {
+
+        width: 96%;
+
+        margin: 10px auto;
+
+    }
+
+
+    .content {
+
+        padding:
+            30px
+            18px;
+
+    }
+
+
+    .heading h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .demo-card {
+
+        padding:
+            15px
+            12px
+            10px;
+
+    }
+
+
+    .tree-stage {
+
+        height: 220px;
+
+    }
+
+
+    .board {
+
+        width: 240px;
+
+        height: 280px;
+
+        left: 2%;
+
+    }
+
+
+    .mascot-container {
+
+        width: 78%;
+
+        right: -8%;
+
+    }
+
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        var(--aero-sky-blue),
+        var(--aero-aqua)
+    );
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
