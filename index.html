@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>GeoBinario</title>
+
+    <link
+        rel="stylesheet"
+        href="css/index.css">
+    <link rel="icon" type="image/png" href="img/carita.png">
+</head>
+
+
+<body>
+
+    <!-- ======================================
+         DECORACIONES
+    ======================================= -->
+
+    <div class="aero-shape aero-shape-top"></div>
+
+    <div class="aero-shape aero-shape-bottom"></div>
+
+
+    <!-- ======================================
+         APLICACIÓN
+    ======================================= -->
+
+    <main class="app">
+
+
+        <!-- ==================================
+             CONTENEDOR PRINCIPAL
+        =================================== -->
+
+        <section class="main-card">
+
+
+            <!-- ==================================
+                 COLUMNA IZQUIERDA
+            =================================== -->
+
+            <section class="content">
+
+
+                <!-- LOGO -->
+
+                <div class="brand">
+
+                <div class="brand-icon">
+                    <img src="img/carita.png" alt="Mascota GeoBinario">
+                </div>
+
+                    <span>
+                        GeoBinario
+                    </span>
+
+                </div>
+
+
+                <!-- TITULO -->
+
+                <div class="heading">
+
+                    <span class="eyebrow">
+                        MATEMÁTICA DISCRETA
+                    </span>
+
+                    <h1>
+
+                        Aprende y explora
+
+                        <strong>
+                            Árboles Binarios
+                        </strong>
+
+                    </h1>
+
+
+                    <p>
+
+                        Construye, visualiza y recorre
+                        árboles binarios de búsqueda
+                        de una manera interactiva.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ==================================
+                     DEMOSTRACIÓN
+                =================================== -->
+
+                <div class="demo-card">
+
+
+                    <!-- TITULO DEMO -->
+
+                    <div class="demo-header">
+
+                        <span class="live-dot"></span>
+
+                        <span>
+                            EJEMPLO DE DATOS
+                        </span>
+
+                    </div>
+
+
+                    <!-- NUMEROS -->
+
+                    <div
+                        class="number-bar"
+                        id="numberBar">
+
+                    </div>
+
+
+                    <!-- ARBOL -->
+
+                    <div class="tree-stage">
+
+                        <svg
+                            id="treeSVG"
+                            viewBox="0 0 760 330"
+                            preserveAspectRatio="xMidYMid meet">
+
+                            <g id="treeConnections"></g>
+
+                            <g id="treeNodes"></g>
+
+                        </svg>
+
+                    </div>
+
+
+                    <!-- CONTROLES -->
+
+                    <div class="demo-controls">
+
+                        <button
+                            id="previousExample"
+                            class="arrow-button">
+
+                            ‹
+
+                        </button>
+
+
+                        <div
+                            id="exampleDots"
+                            class="example-dots">
+
+                        </div>
+
+
+                        <button
+                            id="nextExample"
+                            class="arrow-button">
+
+                            ›
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ==================================
+                     BOTONES PRINCIPALES
+                =================================== -->
+
+                <div class="main-buttons">
+
+
+                    <button
+                        id="btnStart"
+                        class="main-button blue-button">
+
+                        <span class="button-icon">
+                            ⌨
+                        </span>
+
+                        <span class="button-text">
+
+                            <small>
+                                COMENZAR
+                            </small>
+
+                            <strong>
+                                Ingresar Números
+                            </strong>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        id="btnTree"
+                        class="main-button green-button">
+
+                        <span class="button-icon">
+                            ♧
+                        </span>
+
+                        <span class="button-text">
+
+                            <small>
+                                EXPLORAR
+                            </small>
+
+                            <strong>
+                                Construir Árbol
+                            </strong>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        id="btnTraversal"
+                        class="main-button yellow-button">
+
+                        <span class="button-icon">
+                            ▶
+                        </span>
+
+                        <span class="button-text">
+
+                            <small>
+                                APRENDER
+                            </small>
+
+                            <strong>
+                                Ver Recorrido
+                            </strong>
+
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ==================================
+                 COLUMNA DERECHA
+            =================================== -->
+
+            <section class="visual">
+
+
+                <!-- ==================================
+                     PIZARRA
+                =================================== -->
+
+                <div class="board">
+
+
+                    <div class="board-pin"></div>
+
+
+                    <div class="board-title">
+                        ÁRBOL BINARIO
+                    </div>
+
+
+                    <svg
+                        viewBox="0 0 300 260">
+
+
+                        <!-- conexiones -->
+
+                        <line
+                            x1="150"
+                            y1="65"
+                            x2="90"
+                            y2="125">
+                        </line>
+
+
+                        <line
+                            x1="150"
+                            y1="65"
+                            x2="210"
+                            y2="125">
+                        </line>
+
+
+                        <line
+                            x1="90"
+                            y1="125"
+                            x2="55"
+                            y2="195">
+                        </line>
+
+
+                        <line
+                            x1="90"
+                            y1="125"
+                            x2="125"
+                            y2="195">
+                        </line>
+
+
+                        <line
+                            x1="210"
+                            y1="125"
+                            x2="175"
+                            y2="195">
+                        </line>
+
+
+                        <line
+                            x1="210"
+                            y1="125"
+                            x2="245"
+                            y2="195">
+                        </line>
+
+
+                        <!-- nodos -->
+
+                        <circle
+                            cx="150"
+                            cy="65"
+                            r="24">
+                        </circle>
+
+
+                        <circle
+                            cx="90"
+                            cy="125"
+                            r="24">
+                        </circle>
+
+
+                        <circle
+                            cx="210"
+                            cy="125"
+                            r="24">
+                        </circle>
+
+
+                        <circle
+                            cx="55"
+                            cy="195"
+                            r="22">
+                        </circle>
+
+
+                        <circle
+                            cx="125"
+                            cy="195"
+                            r="22">
+                        </circle>
+
+
+                        <circle
+                            cx="175"
+                            cy="195"
+                            r="22">
+                        </circle>
+
+
+                        <circle
+                            cx="245"
+                            cy="195"
+                            r="22">
+                        </circle>
+
+
+                        <!-- textos -->
+
+                        <text
+                            x="150"
+                            y="65">
+                            50
+                        </text>
+
+
+                        <text
+                            x="90"
+                            y="125">
+                            30
+                        </text>
+
+
+                        <text
+                            x="210"
+                            y="125">
+                            70
+                        </text>
+
+
+                        <text
+                            x="55"
+                            y="195">
+                            20
+                        </text>
+
+
+                        <text
+                            x="125"
+                            y="195">
+                            40
+                        </text>
+
+
+                        <text
+                            x="175"
+                            y="195">
+                            60
+                        </text>
+
+
+                        <text
+                            x="245"
+                            y="195">
+                            80
+                        </text>
+
+
+                    </svg>
+
+
+                </div>
+
+
+                <!-- ==================================
+                     MASCOTA
+                =================================== -->
+
+                <div class="mascot-container">
+
+
+                    <img
+                        src="img/matecastor.png"
+                        alt="Mascota GeoBinario"
+                        class="mascot">
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
